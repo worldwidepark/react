@@ -8,7 +8,6 @@ function App() {
     <div className="App">
       <header className="App-header">
         <InputTodo />
-        <CountsTodo />
       </header>
     </div>
   );
