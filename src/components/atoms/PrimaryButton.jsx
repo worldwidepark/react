@@ -5,7 +5,7 @@ export const PrimaryButton = (props) => {
   };
 
   return (
-    <button style={contentStyle} onClick={onClick}>
+    <button style={contentStyle} onClick={onClick} type="button">
       {children}
     </button>
   );
