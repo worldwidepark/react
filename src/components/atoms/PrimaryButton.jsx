@@ -1,11 +1,15 @@
 export const PrimaryButton = (props) => {
   const { children, buttonColor, onClick } = props;
-  const contentStyle = {
+  const buttonStyle = {
     background: buttonColor,
+    border: "none",
+    color: "white",
+    fontSize: "16px",
+    margin: "5px",
   };
 
   return (
-    <button style={contentStyle} onClick={onClick} type="button">
+    <button style={buttonStyle} onClick={onClick} type="button">
       {children}
     </button>
   );

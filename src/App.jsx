@@ -1,15 +1,15 @@
 import "./App.css";
-import { CountsTodo } from "./components/molecules/CountsTodo";
 import { InputTodo } from "./components/molecules/InputTodo";
+import { TodoLists } from "./components/molecules/TodoLists";
 import { TodoListsProvider } from "./providers/TodoListsProvider";
 
 function App() {
   return (
     <TodoListsProvider>
       <div className="App">
-        <header className="App-header">
-          <InputTodo />
-        </header>
+        <div className="Title">To do list</div>
+        <InputTodo className="Input" />
+        <TodoLists />
       </div>
     </TodoListsProvider>
   );

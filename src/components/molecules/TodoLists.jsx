@@ -5,6 +5,7 @@ import { CountsTodo } from "./CountsTodo";
 
 export const TodoLists = () => {
   const { todoLists, setTodoLists } = useContext(TodoListsContext);
+
   const onChangeTodoEditText = (event, index) => {
     const todos = [...todoLists];
     todos[index].data = event.target.value;
@@ -36,6 +37,27 @@ export const TodoLists = () => {
     }
   };
 
+  const todoListsStyle = {
+    width: "300px",
+    position: "absolute",
+    top: "60%",
+    display: "flex",
+    flexDirection: "column",
+    padding: "10px",
+    alignItems: "flex-start",
+    borderRadius: "5px",
+    fontSize: "15px",
+    border: "2px solid #d1d3d4",
+  };
+
+  const editInputStyle = {
+    position: "relative",
+    left: "10px",
+    width: "65%",
+    fontSize: "16px",
+    border: "2px solid #ddd",
+    margin: "10px",
+  };
   return (
     <>
       <div>
@@ -46,16 +68,21 @@ export const TodoLists = () => {
         />
       </div>
 
-      <ul>
+      <ul style={todoListsStyle}>
+        {todoLists.length === 0 && (
+          <div style={{ color: "red" }}>Nothing to do. Put something.</div>
+        )}
         {todoLists.map((todo, index) => {
           {
             if (todo.isEdited) {
               return (
-                <div>
+                <div key={index}>
                   <input
+                    style={editInputStyle}
                     type="text"
                     defaultValue={todo.data}
                     onChange={(e) => onChangeTodoEditText(e, index)}
+                    maxLength="18"
                   />
                   <PrimaryButton
                     buttonColor="#4caf50"
@@ -67,13 +94,22 @@ export const TodoLists = () => {
               );
             } else {
               return (
-                <div>
+                <div key={index}>
                   <input
+                    style={{ margin: "8px" }}
                     type="checkbox"
                     name="todolist"
                     onChange={handleChange}
                   ></input>
-                  {todo.data}
+                  <span
+                    style={{
+                      display: "inline-block",
+                      width: "160px",
+                      textAlign: "left",
+                    }}
+                  >
+                    {todo.data}
+                  </span>
                   {console.log(todo.data)}
                   <PrimaryButton
                     buttonColor="#4caf50"
