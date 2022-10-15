@@ -1,0 +1,12 @@
+.App {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  min-height: 100vh;
+  background-color: antiquewhite;
+}
+.Title {
+  font-size: 45px;
+}
