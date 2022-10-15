@@ -2,10 +2,10 @@ export const PrimaryButton = (props) => {
   const { children, buttonColor, onClick } = props;
   const buttonStyle = {
     background: buttonColor,
-    border: "none",
-    color: "white",
-    fontSize: "16px",
-    margin: "5px",
+    border: 'none',
+    color: 'white',
+    fontSize: '16px',
+    margin: '5px',
   };
 
   return (

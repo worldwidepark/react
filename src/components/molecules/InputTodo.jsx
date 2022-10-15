@@ -3,21 +3,21 @@ import { useState } from "react";
 import { TodoListsContext } from "../../providers/TodoListsProvider";
 import { PrimaryButton } from "../atoms/PrimaryButton";
 
+const inputStyle = {
+  width: "65%",
+  padding: "10px 15px",
+  fontSize: "16px",
+  borderRadius: "3px",
+  border: "2px solid #ddd",
+};
+const formStyle = {
+  margin: "30px",
+};
+
 export const InputTodo = () => {
   const [todoText, setTodoText] = useState("");
   const onChangeTodoText = (event) => setTodoText(event.target.value);
   const { todoLists, setTodoLists } = useContext(TodoListsContext);
-
-  const inputStyle = {
-    width: "65%",
-    padding: "10px 15px",
-    fontSize: "16px",
-    borderRadius: "3px",
-    border: "2px solid #ddd",
-  };
-  const formStyle = {
-    margin: "30px",
-  };
 
   const onClickAdd = () => {
     if (todoText === "") {

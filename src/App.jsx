@@ -1,6 +1,6 @@
 import "./App.css";
 import { InputTodo } from "./components/molecules/InputTodo";
-import { TodoLists } from "./components/molecules/TodoLists";
+import { TodoLists } from "./components/template/TodoLists";
 import { TodoListsProvider } from "./providers/TodoListsProvider";
 
 function App() {
